@@ -57,7 +57,7 @@ width: 100%;
 								<td>${g.no }</td>
 								<td>${g.name }</td>
 								<td>${g.regDate}</td>
-								<td><a href="/mysite3/guestbook?a=gdelete&no=${g.no }&password=${g.password }">삭제</a></td>
+								<td><a href="/mysite3/guestbook/deleteGuestbook?no=${g.no }&password=${g.password }">삭제</a></td>
 								<!-- <td><a href="/mysite/views/guestbook/deleteform.jsp">삭제</a></td> -->
 							</tr>
 							<tr>
