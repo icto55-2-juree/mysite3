@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sds.icto.mysite.domain.MemberVo;
@@ -56,4 +57,17 @@ public class MemberController {
 		return "redirect:/index";
 	}
 	
+	@RequestMapping(value="/uinfo", method=RequestMethod.GET)
+	public String uinfoForm(){
+		return"member/mypageform";
+	}
+	
+	@RequestMapping(value="/uinfo", method=RequestMethod.POST)
+	public String uinfoForm(
+			@RequestParam ("name") String name, 
+			@RequestParam ("password") String password, 
+			@RequestParam ("no") Long no){
+		memberService.updateUser(name, password, no);
+		return "redirect:/index";
+	}
 }

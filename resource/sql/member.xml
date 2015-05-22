@@ -17,4 +17,10 @@
 		]]>  
 	</select>
 	
+	<update id="updateMember" parameterClass="java.util.Map">
+		<![CDATA[
+		update member set name=#name#, password=#password# 
+		where no=#no#
+		]]>  
+	</update>
 </sqlMap> 

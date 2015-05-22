@@ -17,8 +17,7 @@
 		<div id="content">
 			<div id="user">
 
-				<form id="join-form" name="joinForm" method="post" action="/mysite3/member">
-					<input type="hidden" name="a" value="modifyMem">
+				<form method="post" action="/mysite3/member/uinfo">
 					<input type="hidden" name="no" value="${authMember.no }">
 					<label class="block-label" for="name">이름</label>
 					<input id="name" name="name" type="text" value="${authMember.name }">

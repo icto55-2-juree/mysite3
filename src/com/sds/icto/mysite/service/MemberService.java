@@ -24,4 +24,8 @@ public class MemberService {
 		
 	}
 
+	public void updateUser(String name, String password, Long no) {
+		memberDao.updateUser(name, password, no);		
+	}
+
 }

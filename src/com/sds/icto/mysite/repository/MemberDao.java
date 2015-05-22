@@ -7,6 +7,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
@@ -39,21 +41,17 @@ public class MemberDao {
 		return memberVo;
 	}
 
-	public void updateMember(MemberVo vo) throws ClassNotFoundException,
-			SQLException {
-		/*
-		 * Connection conn = getConnection();
-		 * 
-		 * String sql = "update member set name=?, password=? where no = ?";
-		 * PreparedStatement pstmt = conn.prepareStatement(sql);
-		 * 
-		 * pstmt.setString( 1, vo.getName()); pstmt.setString( 2,
-		 * vo.getPassword()); pstmt.setLong(3, vo.getNo());
-		 * 
-		 * pstmt.executeUpdate();
-		 * 
-		 * pstmt.close(); conn.close();
-		 */
+	
+
+	public void updateUser(String name, String password, Long no) {
+		Map map = new HashMap();
+		map.put("name", name);
+		map.put("password", password);
+		map.put("no", no);
+		
+		sqlMapClientTemplate.update("member.updateMember", map);
+		
+		
 	}
 
 }
