@@ -75,7 +75,7 @@ text-align: left;
 		<!-- 등록순으로 보여지는 첫번째 탭 -->
 		<!-- Table -->
 		<div id="content">
-			<form action="/mysite3/board?editBoard&no=${vo.no }" method="post">
+			<form action="/mysite3/board/editBoard?no=${vo.no }" method="post">
 				<table id="detailTable">
 				<tr>
 					<th colspan="2" id="title"><input type="text" name="title" value="${vo.title}"></th>

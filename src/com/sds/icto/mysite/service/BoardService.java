@@ -29,8 +29,9 @@ public class BoardService {
 	public BoardVo getBoard(int no) {
 		
 		boardDao.updateCnt(no);
+		BoardVo vo = boardDao.getBoard(no);
 		
-		return boardDao.getBoard(no);
+		return vo;
 	}
 	
 
@@ -61,9 +62,7 @@ public class BoardService {
 
 	public void editBoard(int no, String title, String content) {
 		
-		BoardVo vo = boardDao.getBoard(no);
-		
-		boardDao.updateBoard(vo);
+		boardDao.updateBoard(no, title, content);
 		
 	}
 }
